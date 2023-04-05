@@ -1,0 +1,335 @@
+{
+    "Semaine 1": [
+        {
+            "lundi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "08:00",
+                            "fin": "09:45",
+                            "type": "Cours",
+                            "matiere": "ALGO",
+                            "enseignant": "Laurent Rozas"
+                        },
+                        {
+                            "debut": "10:00",
+                            "fin": "11:15",
+                            "type": "Cours",
+                            "matiere": "POGL",
+                            "enseignant": "Gruau"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "09:15",
+                            "fin": "11:00",
+                            "type": "Cours",
+                            "matiere": "ANGLAIS",
+                            "enseignant": "Christine Paulin"
+                        },
+                        {
+                            "debut": "14:00",
+                            "fin": "17:00",
+                            "type": "Cours",
+                            "matiere": "LOGIQUE",
+                            "enseignant": "Christine Paulin"
+                        }
+                    ]
+                }
+            ],
+            "mardi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "Cours",
+                            "matiere": "PFA",
+                            "enseignant": "Kym Nguyen"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "16:30",
+                            "type": "TP",
+                            "matiere": "ALGO",
+                            "enseignant": "Laurent Rozas"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "TP",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Laissaoui <br> Mehdi"
+                        },
+                        {
+                            "debut": "11:00",
+                            "fin": "17:00",
+                            "type": "TP",
+                            "matiere": "PCII",
+                            "enseignant": "Nicolas <br> Sabouret"
+                        }
+                    ]
+                }
+            ],
+            "mercredi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "12:15",
+                            "fin": "16:30",
+                            "type": "TP",
+                            "matiere": "LOGIQUE",
+                            "enseignant": "Christine <br> Paulin"
+                        },
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "TP",
+                            "matiere": "PFA",
+                            "enseignant": "Kym Nguyen"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "TP",
+                            "matiere": "ANGLAIS",
+                            "enseignant": "Kristi Kidsti"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "15:30",
+                            "type": "TP",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Didier Michel"
+                        }
+                    ]
+                }
+            ],
+            "jeudi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "08:00",
+                            "fin": "09:45",
+                            "type": "Cours",
+                            "matiere": "POGL",
+                            "enseignant": "Gruau"
+                        },
+                        {
+                            "debut": "10:00",
+                            "fin": "11:15",
+                            "type": "TP",
+                            "matiere": "PCII",
+                            "enseignant": "Nicolas <br> Sabouret"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "14:00",
+                            "fin": "17:00",
+                            "type": "Cours",
+                            "matiere": "BD",
+                            "enseignant": "Zinedine <br> Zidane"
+                        }
+                    ]
+                }
+            ],
+            "vendredi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "Cours",
+                            "matiere": "PCII",
+                            "enseignant": "Amine Larbi"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "16:30",
+                            "type": "Cours",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Yiang Lhin"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "Cours",
+                            "matiere": "BD",
+                            "enseignant": "Robert Duboit"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Semaine 2": [
+        {
+            "lundi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "10:00",
+                            "fin": "11:15",
+                            "type": "Cours",
+                            "matiere": "POGL",
+                            "enseignant": "Gruau"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "09:15",
+                            "fin": "11:00",
+                            "type": "Cours",
+                            "matiere": "ANGLAIS",
+                            "enseignant": "Christine Paulin"
+                        },
+                        {
+                            "debut": "14:00",
+                            "fin": "17:00",
+                            "type": "Cours",
+                            "matiere": "LOGIQUE",
+                            "enseignant": "Christine Paulin"
+                        }
+                    ]
+                }
+            ],
+            "mardi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "Cours",
+                            "matiere": "PFA",
+                            "enseignant": "Kym Nguyen"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "16:30",
+                            "type": "TP",
+                            "matiere": "ALGO",
+                            "enseignant": "Laurent Rozas"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "TP",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Laissaoui <br> Mehdi"
+                        },
+                        {
+                            "debut": "11:00",
+                            "fin": "17:00",
+                            "type": "TP",
+                            "matiere": "PCII",
+                            "enseignant": "Nicolas <br> Sabouret"
+                        }
+                    ]
+                }
+            ],
+            "mercredi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "12:15",
+                            "fin": "16:30",
+                            "type": "TP",
+                            "matiere": "LOGIQUE",
+                            "enseignant": "Christine <br> Paulin"
+                        },
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "TP",
+                            "matiere": "PFA",
+                            "enseignant": "Kym Nguyen"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "TP",
+                            "matiere": "ANGLAIS",
+                            "enseignant": "Kristi Kidsti"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "15:30",
+                            "type": "TP",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Didier Michel"
+                        }
+                    ]
+                }
+            ],
+            "jeudi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "08:00",
+                            "fin": "09:45",
+                            "type": "Cours",
+                            "matiere": "POGL",
+                            "enseignant": "Gruau"
+                        },
+                        {
+                            "debut": "10:00",
+                            "fin": "11:15",
+                            "type": "TP",
+                            "matiere": "PCII",
+                            "enseignant": "Nicolas <br> Sabouret"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "14:00",
+                            "fin": "17:00",
+                            "type": "Cours",
+                            "matiere": "BD",
+                            "enseignant": "Zinedine <br> Zidane"
+                        }
+                    ]
+                }
+            ],
+            "vendredi": [
+                {
+                    "groupe1": [
+                        {
+                            "debut": "10:15",
+                            "fin": "12:15",
+                            "type": "Cours",
+                            "matiere": "PCII",
+                            "enseignant": "Amine Larbi"
+                        },
+                        {
+                            "debut": "12:30",
+                            "fin": "16:30",
+                            "type": "Cours",
+                            "matiere": "PROGWEB",
+                            "enseignant": "Yiang Lhin"
+                        }
+                    ],
+                    "groupe2": [
+                        {
+                            "debut": "08:00",
+                            "fin": "10:00",
+                            "type": "Cours",
+                            "matiere": "BD",
+                            "enseignant": "Robert Duboit"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
