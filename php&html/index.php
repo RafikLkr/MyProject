@@ -1,39 +1,40 @@
+<?php
+  session_start();
+  // Récupérer les données de votre fichier JSON
+  $json_file = file_get_contents("../json/etudiant.json");
+  $data = json_decode($json_file, true);
+
+  // Vérifier si le formulaire est soumis
+  if(isset($_POST['email']) && isset($_POST['mdp'])){
+    $pseudo = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $fonction = $_POST['fonction'];
+    $semaine = 1;
+ 
+    // Vérifier si l'utilisateur existe dans le fichier JSON
+    foreach($data[$fonction] as $utilisateur){
+      if($utilisateur['mail'] == $pseudo && $utilisateur['mdp'] == $mdp){
+        // L'utilisateur est authentifié, afficher le calendrier
+        $_SESSION ["loggedin"]=true;
+        $_SESSION ["loggein"]=$pseudo;
+        $_SESSION ["sem"] = 1;
+        header('Location: etudiant.php');
+        exit;
+      }
+    }
+    // Si l'utilisateur n'existe pas ou les informations de connexion sont incorrectes, afficher un message d'erreur
+    echo "Pseudo ou mot de passe incorrect";
+  }
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>Login Platform</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'><link rel="stylesheet" href="../css/style.css">
 </head>
-
-<?php
-// Récupérer les données de votre fichier JSON
-  $json_file = file_get_contents("etudiant.json");
-  $data = json_decode($json_file, true);
-
-  // Vérifier si le formulaire est soumis
-  if(isset($_POST['email']) && isset($_POST['mdp'])){
-  $pseudo = $_POST['email'];
-  $mdp = $_POST['mdp'];
-  $fonction = $_POST['fonction'];
- 
-  // Vérifier si l'utilisateur existe dans le fichier JSON
-  foreach($data[$fonction] as $utilisateur){
-    if($utilisateur['mail'] == $pseudo && $utilisateur['mdp'] == $mdp){
-      // L'utilisateur est authentifié, afficher le calendrier
-      session_start();
-      $_SESSION ["loggedin"]=true;
-      $_SESSION ["loggein"]=$pseudo;
-      //include "index.php";
-      header('Location: etudiant.php');
-      exit;
-    }
-  }
-  // Si l'utilisateur n'existe pas ou les informations de connexion sont incorrectes, afficher un message d'erreur
-  echo "Pseudo ou mot de passe incorrect";
-  }
-?>
 
 <!DOCTYPE html>
 <html lang="en" >
@@ -90,7 +91,7 @@
   </form>
 </div>
 <!-- Fichier JavaScript -->
-<script  src="./script.js"></script>
+<script  src="../java/script.js"></script>
 
 </body>
 </html>

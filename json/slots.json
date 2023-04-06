@@ -9,14 +9,16 @@
                             "fin": "09:45",
                             "type": "Cours",
                             "matiere": "ALGO",
-                            "enseignant": "Laurent Rozas"
+                            "enseignant": "Laurent Rozas",
+                            "salle": "E205"
                         },
                         {
                             "debut": "10:00",
                             "fin": "11:15",
                             "type": "Cours",
                             "matiere": "POGL",
-                            "enseignant": "Gruau"
+                            "enseignant": "Gruau",
+                            "salle": "E205"
                         }
                     ],
                     "groupe2": [
@@ -25,14 +27,16 @@
                             "fin": "11:00",
                             "type": "Cours",
                             "matiere": "ANGLAIS",
-                            "enseignant": "Christine Paulin"
+                            "enseignant": "Christine Paulin",
+                            "salle": "E208"
                         },
                         {
                             "debut": "14:00",
                             "fin": "17:00",
                             "type": "Cours",
                             "matiere": "LOGIQUE",
-                            "enseignant": "Christine Paulin"
+                            "enseignant": "Christine Paulin",
+                            "salle": "E203"
                         }
                     ]
                 }
@@ -45,14 +49,16 @@
                             "fin": "12:15",
                             "type": "Cours",
                             "matiere": "PFA",
-                            "enseignant": "Kym Nguyen"
+                            "enseignant": "Kym Nguyen",
+                            "salle": "E205"
                         },
                         {
                             "debut": "12:30",
                             "fin": "16:30",
                             "type": "TP",
                             "matiere": "ALGO",
-                            "enseignant": "Laurent Rozas"
+                            "enseignant": "Laurent Rozas",
+                            "salle": "E203"
                         }
                     ],
                     "groupe2": [
@@ -61,14 +67,16 @@
                             "fin": "10:00",
                             "type": "TP",
                             "matiere": "PROGWEB",
-                            "enseignant": "Laissaoui <br> Mehdi"
+                            "enseignant": "Laissaoui  Mehdi",
+                            "salle": "E208"
                         },
                         {
                             "debut": "11:00",
                             "fin": "17:00",
                             "type": "TP",
                             "matiere": "PCII",
-                            "enseignant": "Nicolas <br> Sabouret"
+                            "enseignant": "Nicolas  Sabouret",
+                            "salle": "E205"
                         }
                     ]
                 }
@@ -81,14 +89,16 @@
                             "fin": "16:30",
                             "type": "TP",
                             "matiere": "LOGIQUE",
-                            "enseignant": "Christine <br> Paulin"
+                            "enseignant": "Christine  Paulin",
+                            "salle": "E208"
                         },
                         {
                             "debut": "10:15",
                             "fin": "12:15",
                             "type": "TP",
                             "matiere": "PFA",
-                            "enseignant": "Kym Nguyen"
+                            "enseignant": "Kym Nguyen",
+                            "salle": "E205"
                         }
                     ],
                     "groupe2": [
@@ -97,14 +107,16 @@
                             "fin": "10:00",
                             "type": "TP",
                             "matiere": "ANGLAIS",
-                            "enseignant": "Kristi Kidsti"
+                            "enseignant": "Kristi Kidsti",
+                            "salle": "E203"
                         },
                         {
                             "debut": "12:30",
                             "fin": "15:30",
                             "type": "TP",
                             "matiere": "PROGWEB",
-                            "enseignant": "Didier Michel"
+                            "enseignant": "Didier Michel",
+                            "salle": "E208"
                         }
                     ]
                 }
@@ -117,14 +129,16 @@
                             "fin": "09:45",
                             "type": "Cours",
                             "matiere": "POGL",
-                            "enseignant": "Gruau"
+                            "enseignant": "Gruau",
+                            "salle": "E208"
                         },
                         {
                             "debut": "10:00",
                             "fin": "11:15",
                             "type": "TP",
                             "matiere": "PCII",
-                            "enseignant": "Nicolas <br> Sabouret"
+                            "enseignant": "Nicolas  Sabouret",
+                            "salle": "E203"
                         }
                     ],
                     "groupe2": [
@@ -133,7 +147,16 @@
                             "fin": "17:00",
                             "type": "Cours",
                             "matiere": "BD",
-                            "enseignant": "Zinedine <br> Zidane"
+                            "enseignant": "Zinedine  Zidane",
+                            "salle": "E208"
+                        },
+                        {
+                            "debut": "08:30",
+                            "fin": "10:30",
+                            "type": "TP",
+                            "matiere": "PFA",
+                            "enseignant": "Pablo Arighi",
+                            "salle": "E201"
                         }
                     ]
                 }
@@ -146,14 +169,16 @@
                             "fin": "12:15",
                             "type": "Cours",
                             "matiere": "PCII",
-                            "enseignant": "Amine Larbi"
+                            "enseignant": "Amine Larbi",
+                            "salle": "E208"
                         },
                         {
                             "debut": "12:30",
                             "fin": "16:30",
                             "type": "Cours",
                             "matiere": "PROGWEB",
-                            "enseignant": "Yiang Lhin"
+                            "enseignant": "Yiang Lhin",
+                            "salle": "E203"
                         }
                     ],
                     "groupe2": [
@@ -162,7 +187,8 @@
                             "fin": "10:00",
                             "type": "Cours",
                             "matiere": "BD",
-                            "enseignant": "Robert Duboit"
+                            "enseignant": "Robert Duboit",
+                            "salle": "E208"
                         }
                     ]
                 }
@@ -179,7 +205,8 @@
                             "fin": "11:15",
                             "type": "Cours",
                             "matiere": "POGL",
-                            "enseignant": "Gruau"
+                            "enseignant": "Gruau",
+                            "salle": "E208"
                         }
                     ],
                     "groupe2": [
@@ -188,14 +215,16 @@
                             "fin": "11:00",
                             "type": "Cours",
                             "matiere": "ANGLAIS",
-                            "enseignant": "Christine Paulin"
+                            "enseignant": "Christine Paulin",
+                            "salle": "E203"
                         },
                         {
                             "debut": "14:00",
                             "fin": "17:00",
                             "type": "Cours",
                             "matiere": "LOGIQUE",
-                            "enseignant": "Christine Paulin"
+                            "enseignant": "Christine Paulin",
+                            "salle": "E205"
                         }
                     ]
                 }
@@ -208,14 +237,16 @@
                             "fin": "12:15",
                             "type": "Cours",
                             "matiere": "PFA",
-                            "enseignant": "Kym Nguyen"
+                            "enseignant": "Kym Nguyen",
+                            "salle": "E205"
                         },
                         {
                             "debut": "12:30",
                             "fin": "16:30",
                             "type": "TP",
                             "matiere": "ALGO",
-                            "enseignant": "Laurent Rozas"
+                            "enseignant": "Laurent Rozas",
+                            "salle": "E205"
                         }
                     ],
                     "groupe2": [
@@ -224,14 +255,16 @@
                             "fin": "10:00",
                             "type": "TP",
                             "matiere": "PROGWEB",
-                            "enseignant": "Laissaoui <br> Mehdi"
+                            "enseignant": "Laissaoui  Mehdi",
+                            "salle": "E205"
                         },
                         {
                             "debut": "11:00",
                             "fin": "17:00",
                             "type": "TP",
                             "matiere": "PCII",
-                            "enseignant": "Nicolas <br> Sabouret"
+                            "enseignant": "Nicolas  Sabouret",
+                            "salle": "E208"
                         }
                     ]
                 }
@@ -244,14 +277,16 @@
                             "fin": "16:30",
                             "type": "TP",
                             "matiere": "LOGIQUE",
-                            "enseignant": "Christine <br> Paulin"
+                            "enseignant": "Christine  Paulin",
+                            "salle": "E203"
                         },
                         {
                             "debut": "10:15",
                             "fin": "12:15",
                             "type": "TP",
                             "matiere": "PFA",
-                            "enseignant": "Kym Nguyen"
+                            "enseignant": "Kym Nguyen",
+                            "salle": "E208"
                         }
                     ],
                     "groupe2": [
@@ -260,14 +295,16 @@
                             "fin": "10:00",
                             "type": "TP",
                             "matiere": "ANGLAIS",
-                            "enseignant": "Kristi Kidsti"
+                            "enseignant": "Kristi Kidsti",
+                            "salle": "E208"
                         },
                         {
                             "debut": "12:30",
                             "fin": "15:30",
                             "type": "TP",
                             "matiere": "PROGWEB",
-                            "enseignant": "Didier Michel"
+                            "enseignant": "Didier Michel",
+                            "salle": "E205"
                         }
                     ]
                 }
@@ -280,14 +317,16 @@
                             "fin": "09:45",
                             "type": "Cours",
                             "matiere": "POGL",
-                            "enseignant": "Gruau"
+                            "enseignant": "Gruau",
+                            "salle": "E203"
                         },
                         {
                             "debut": "10:00",
                             "fin": "11:15",
                             "type": "TP",
                             "matiere": "PCII",
-                            "enseignant": "Nicolas <br> Sabouret"
+                            "enseignant": "Nicolas  Sabouret",
+                            "salle": "E208"
                         }
                     ],
                     "groupe2": [
@@ -296,7 +335,8 @@
                             "fin": "17:00",
                             "type": "Cours",
                             "matiere": "BD",
-                            "enseignant": "Zinedine <br> Zidane"
+                            "enseignant": "Zinedine  Zidane",
+                            "salle": "E205"
                         }
                     ]
                 }
@@ -309,14 +349,16 @@
                             "fin": "12:15",
                             "type": "Cours",
                             "matiere": "PCII",
-                            "enseignant": "Amine Larbi"
+                            "enseignant": "Amine Larbi",
+                            "salle": "E203"
                         },
                         {
                             "debut": "12:30",
                             "fin": "16:30",
                             "type": "Cours",
                             "matiere": "PROGWEB",
-                            "enseignant": "Yiang Lhin"
+                            "enseignant": "Yiang Lhin",
+                            "salle": "E203"
                         }
                     ],
                     "groupe2": [
@@ -325,7 +367,8 @@
                             "fin": "10:00",
                             "type": "Cours",
                             "matiere": "BD",
-                            "enseignant": "Robert Duboit"
+                            "enseignant": "Robert Duboit",
+                            "salle": "E208"
                         }
                     ]
                 }

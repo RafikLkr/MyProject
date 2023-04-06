@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 
 <html lang="en" >
@@ -11,6 +15,46 @@
 <body>
     <script src="../java/script.js"></script>
     <?php
+        if (!isset($_POST['sem'])){
+          $_POST['sem']=1;
+        }
+
+        if (isset($_POST['submit'])) {
+            if(isset($_POST['salle']) && isset($_POST['num_semaine']) && isset($_POST['jour']) && isset($_POST['groupe']) && isset($_POST['heure_debut']) && isset($_POST['nom_cours']) && isset($_POST['type_cours']) && isset($_POST['enseignant']) && isset($_POST['heure_fin'])){
+                
+                // On récupère les données du formulaire
+                $semaine = 'Semaine ' . $sem;
+                $jour = $_POST['jour'];
+                $groupe = $_POST['groupe'];
+                $heure_debut = $_POST['heure_debut'];
+                $nom_cours = $_POST['nom_cours'];
+                $type_cours = $_POST['type_cours'];
+                $enseignant = $_POST['enseignant'];
+                $heure_fin = $_POST['heure_fin'];
+                $salle = $_POST['salle'];
+
+                // Charger le fichier JSON
+                $json = file_get_contents('../json/slots.json');
+
+                // Convertir le JSON en tableau PHP
+                $data = json_decode($json, true);
+
+                // Ajouter le nouveau cours
+                $new_course = [
+                    "debut" => $heure_debut,
+                    "fin" => $heure_fin,
+                    "type" => $type_cours,
+                    "matiere" => $nom_cours,
+                    "enseignant" => $enseignant,
+                    "salle" => $salle
+                ];
+                $data[$semaine][0][$jour][0][$groupe][] = $new_course;
+
+                // Sauvegarder les modifications dans le fichier JSON
+                $json = json_encode($data, JSON_PRETTY_PRINT);
+                file_put_contents('../json/slots.json', $json);
+            }
+        }
 
         // Fonction pour savoir si un cours commence pour un jour et un groupe et une heure donnée
         function cours_commence($data, $jour, $groupe, $time){
@@ -66,9 +110,11 @@
                     $type = $seance['type'];
                     $matiere = $seance['matiere'];
                     $enseignant = $seance['enseignant'];
+                    $salle = $seance['salle'];
                     array_push($info, $matiere);
                     array_push($info, $type);
                     array_push($info, $enseignant);
+                    array_push($info, $salle);
                 }
             }
             return $info;
@@ -98,7 +144,7 @@
         echo'<hr>';
         echo'<div class="navigation_semaine">';
             echo'<container>';
-                echo'<img src="../img/left_arrow.png" class="arrow" id="left_arrow" onclick="pastweek();">';
+                echo'<img src="../img/left_arrow.png" class="arrow" id="left_arrow" onclick="pastweek('.($_POST['sem']-1).');">';
                 echo'<div><p id="semaine">Semaine 1</p></div>';
                 echo '<img src="../img/right_arrow.png" class="arrow" id="right_arrow" onclick="nextweek();">';
             echo'</container>';
@@ -160,7 +206,7 @@
                 $nb_plage_horaire = count($plages_horaires);
                 $i=0;
                 // Pour chaque horaire
-                $semaine_en_cours = "Semaine 1";
+                $semaine_en_cours = "Semaine " . $_SESSION['sem'];
                 $data = $data[$semaine_en_cours];
                 $data = $data[0];
                 while($i<$nb_plage_horaire){
@@ -195,7 +241,7 @@
                                 $nb_ligne = (($heure_de_fin-$heure_de_debut)*4) + (abs($minute_de_fin-$minute_de_debut)/15);
                                 // info_cours
                                 $info_cours = info_cours($data,$day,$group,$horaire);
-                                // affichage
+                                // on détermine le nombre de plages horaire de 15 minutes que le cours prend entre autre le nombre de rowspan de lignes qu'il prendra
                                 if($minute_de_fin < $minute_de_debut){
                                     $nb_ligne = (($heure_de_fin-$heure_de_debut)*4) - (abs($minute_de_fin-$minute_de_debut)/15);
                                 }
@@ -205,7 +251,7 @@
                                 // On récupère les données du cours
                                 $info_cours = info_cours($data,$day,$group,$horaire);
                                 // Puis on les affiche dans la case qu'on a créé avec les rowspan correspondant
-                                echo " rowspan=". $nb_ligne . " class=". $info_cours[0] .">" . $info_cours[0] ."<br>" . $info_cours[1] ."<br>". $info_cours[2] ."<br>" . "</td>" ;
+                                echo " rowspan=". $nb_ligne . " style='cursor:pointer;'" . " class=". $info_cours[0]. ">" . $info_cours[0] ."<br>" . $info_cours[1] ."<br>". $info_cours[2] ."<br>" . $info_cours[3] . "</td>" ;
                             }
                             // Sinon si la plage horaire n'est ni occupé ni annonce le début d'un cours alors on crée une case vide
                             else { echo "<td>" . "</td>"; }
@@ -221,105 +267,73 @@
     ?>
 </body>
 
-<?php 
-    if (isset($_POST['submit'])) {
-        if(isset($_POST['num_semaine']) && isset($_POST['jour']) && isset($_POST['groupe']) && isset($_POST['heure_debut']) && isset($_POST['nom_cours']) && isset($_POST['type_cours']) && isset($_POST['enseignant']) && isset($_POST['heure_fin'])){
-            
-            // On récupère les données du formulaire
-            $num_semaine = $_POST['num_semaine'];
-            $semaine = 'Semaine ' . $num_semaine;
-            $jour = $_POST['jour'];
-            $groupe = $_POST['groupe'];
-            $heure_debut = $_POST['heure_debut'];
-            $nom_cours = $_POST['nom_cours'];
-            $type_cours = $_POST['type_cours'];
-            $enseignant = $_POST['enseignant'];
-            $heure_fin = $_POST['heure_fin'];
-
-            // Charger le fichier JSON
-            $json = file_get_contents('../json/slots.json');
-
-            // Convertir le JSON en tableau PHP
-            $data = json_decode($json, true);
-
-            // Ajouter le nouveau cours
-            $new_course = [
-                "debut" => $heure_debut,
-                "fin" => $heure_fin,
-                "type" => $type_cours,
-                "matiere" => $nom_cours,
-                "enseignant" => $enseignant
-            ];
-            $data[$semaine][0][$jour][0][$groupe][] = $new_course;
-
-            // Sauvegarder les modifications dans le fichier JSON
-            $json = json_encode($data, JSON_PRETTY_PRINT);
-            file_put_contents('../json/slots.json', $json);
-        }
-    }
-?>
-
 <img src="../img/plus.png" id="add" onclick="openform();">
+<!-- Mon pop up qui contiendra mon formulaire pour ajouter les cours -->
 <div class="pop_up">
+    <!-- L'icone Croix pour fermer le pop-up -->
     <i class="uil uil-multiply" id="close" onclick="closeform()"></i>
+    <!-- Le formulaire -->
     <form action="etudiant.php" method="POST" id="form" >
         <div class=form>
-            <div class="left_form">
-                <div class="info">
-                    <label for="num_semaine">Semaine :</label>  
-                    <input type="number" id="num_semaine" name="num_semaine" min="1" max="52" required><br><br>
-                </div>
-                
-                <div class="info">
-                    <label for="jour">Jour :</label>
-                    <select id="jour" name="jour" required>
-                        <option value="lundi">Lundi</option>
-                        <option value="mardi">Mardi</option>
-                        <option value="mercredi">Mercredi</option>
-                        <option value="jeudi">Jeudi</option>
-                        <option value="vendredi">Vendredi</option>
-                    </select><br><br>
-                </div>
-                
-                <div class="info">
-                <label for="groupe">Groupe:</label>
-                <select id="groupe" name="groupe" required>
-                    <option value="groupe1">Groupe 1</option>
-                    <option value="groupe2">Groupe 2</option>
-                </select><br><br>
-                </div>
+            <!-- Le numéro de semaine du cours a ajouté -->
+            <div class="info">
+                <label for="num_semaine">Semaine :</label>  
+                <input type="number" id="num_semaine" name="num_semaine" min="1" max="52" required><br><br>
             </div>
-
-            <div class="right_form">
-                <div class='info'>
-                    <label for="nom_cours">Matière :</label>
-                    <input type="text" id="nom_cours" name="nom_cours" required><br><br>
-                </div>
-
-                <div class='info'>
-                    <label for="type_cours">Type de cours :</label>
-                    <select id="type_cours" name="type_cours" required>
-                        <option value="TP">TP</option>
-                        <option value="Cours">Cours</option>
-                    </select><br><br>
-                </div>
-                
-                <div class='info'>
-                    <label for="enseignant">Enseignant :</label>
-                    <input type="text" id="enseignant" name="enseignant" required><br><br>
-                </div>
-
-                <div class='info'>
-                    <label for="heure_debut">Heure de début :</label>
-                    <input type="time" id="heure_debut" name="heure_debut" step="900" required><br><br>
-                </div>
-
-                <div class='info'>
-                    <label for="heure_fin">Heure de fin :</label>
-                    <input type="time" id="heure_fin" name="heure_fin" step="900" required><br><br>
-                </div>
+            <!-- Le jour du cours a ajouté -->
+            <div class="info">
+                <label for="jour">Jour :</label>
+                <select id="jour" name="jour" required>
+                    <option value="lundi">Lundi</option>
+                    <option value="mardi">Mardi</option>
+                    <option value="mercredi">Mercredi</option>
+                    <option value="jeudi">Jeudi</option>
+                    <option value="vendredi">Vendredi</option>
+                </select><br><br>
+            </div>
+            <!-- Le groupe concerné par le cours a ajouté -->
+            <div class="info">
+            <label for="groupe">Groupe:</label>
+            <select id="groupe" name="groupe" required>
+                <option value="groupe1">Groupe 1</option>
+                <option value="groupe2">Groupe 2</option>
+            </select><br><br>
+            </div>
+            <!-- La matière du cours a ajouté -->
+            <div class='info'>
+                <label for="nom_cours">Matière :</label>
+                <input type="text" id="nom_cours" name="nom_cours" required><br><br>
+            </div>
+            <!-- On précise si c'est un cours, tp ou examen -->
+            <div class='info'>
+                <label for="type_cours">Type de cours :</label>
+                <select id="type_cours" name="type_cours" required>
+                    <option value="TP">TP</option>
+                    <option value="Cours">Cours</option>
+                </select><br><br>
+            </div>
+            <!-- On précise quel enseignant se chargera du cours-->
+            <div class='info'>
+                <label for="enseignant">Enseignant :</label>
+                <input type="text" id="enseignant" name="enseignant" required><br><br>
+            </div>
+            <!-- On précise la salle ou se tiendra le cours -->
+            <div class='info'>
+                <label for="salle">Salle :</label>
+                <input type="text" id="salle" name="salle" required><br><br>
+            </div>
+            <!-- On précisera l'heure de début du cours -->
+            <div class='info'>
+                <label for="heure_debut">Heure de début :</label>
+                <input type="time" id="heure_debut" name="heure_debut" step="900" min="08:00:00" max="18:00:00" required><br><br>
+            </div>
+            <!-- On précisera l'heure de fin du cours -->
+            <div class='info'>
+                <label for="heure_fin">Heure de fin :</label>
+                <input type="time" id="heure_fin" name="heure_fin" step="900"  max="19:00:00" min="08:30:00" required><br><br>
             </div>
         </div>
+        <!-- Une fois toutes les cases remplies on soumet le formulaire avec l'input ci dessous -->
         <input type="submit" value="Valider" name="submit">
     </form>
 </div>
